@@ -27,7 +27,7 @@ function createArray(length) {
 }
 
 const s = 512; // Canvas Size
-const gridS = 8; // Grid Size
+const gridS = 32; // Grid Size
 const sS = s / gridS; // Square Size
 const hSS = sS / 2; // Half Square Size
 
