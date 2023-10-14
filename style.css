@@ -85,3 +85,6 @@ button:hover {
 button:active {
     background-color: var(--primary-color);
 }
+h1 {
+    margin: 32px;
+}
