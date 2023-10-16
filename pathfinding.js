@@ -206,7 +206,7 @@ canvas.addEventListener("click", (e) => {
     const rPos = [rX, rY];
 
     if (mode === 0 && startPos != rPos) {
-        if (map[rX][rY] === undefined) {
+        if (map[rX][rY] === undefined || map[rX][rY] === 0) {
             map[startPos[0]][startPos[1]] = 0;
             map[rX][rY] = 2;
             startPos = rPos;
@@ -215,7 +215,7 @@ canvas.addEventListener("click", (e) => {
         }
     }
     if (mode === 1 && endPos != rPos) {
-        if (map[rX][rY] === undefined) {
+        if (map[rX][rY] === undefined || map[rX][rY] === 0) {
             map[endPos[0]][endPos[1]] = 0;
             map[rX][rY] = 3;
             endPos = rPos;
@@ -252,20 +252,6 @@ canvas.addEventListener("mousedown", (e) => {
 
     const blockPos = [rX, rY];
     mouseFirstPos = blockPos;
-
-    if (mode === 2) {
-        if (map[rX][rY] === undefined) {
-            map[rX][rY] = 1;
-            updateDraw();
-        }
-    }
-
-    if (mode === 3) {
-        if (map[rX][rY] === 1) {
-            map[rX][rY] = undefined;
-            updateDraw();
-        }
-    }
 });
 
 canvas.addEventListener("mouseup", () => {
