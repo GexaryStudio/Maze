@@ -252,6 +252,20 @@ canvas.addEventListener("mousedown", (e) => {
 
     const blockPos = [rX, rY];
     mouseFirstPos = blockPos;
+
+    if (mode === 2) {
+        if (map[rX][rY] === undefined) {
+            map[rX][rY] = 1;
+            updateDraw();
+        }
+    }
+
+    if (mode === 3) {
+        if (map[rX][rY] === 1) {
+            map[rX][rY] = undefined;
+            updateDraw();
+        }
+    }
 });
 
 canvas.addEventListener("mouseup", () => {
